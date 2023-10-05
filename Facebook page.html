@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Making Facebook Page Resposive-->
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2,shrink-to-fit=no">
+
+        <!--Page Title-->
+        <title>Facebook - Home | Facebook</title>
+
+        <!--Favicon-->
+        <link rel="icon" type="image/x-icon" href="favicon-32x32.png">
+        
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+
+            /*Tooltip*/
+            .tooltip {
+                position: relative;
+            }
+
+            /*Tooltip and Tooltip text Styling*/
+            .tooltip .tooltiptext {
+                visibility: hidden;
+                background-color: rgb(0, 0, 0, 0.70);
+                color: #fff;
+                text-align: center;
+                border-radius: 6px;
+                font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+
+
+                /* Position the tooltip */
+                position: absolute;
+                z-index: 1;
+            }
+
+            /*Hover*/
+            .tooltip:hover .tooltiptext {
+                visibility: visible;
+            }
+
+            /*Header*/
+            .header{
+                width: 100%;
+                height: 25px;
+                margin-bottom: 10px;
+            }
+
+            /*Facebook Icon*/
+            img{
+                border-radius: 50%;
+            }
+
+            /*Search Box*/
+            input[id=search]{
+                border-radius: 10px;
+                border: none;
+                background-color: #F0F2F5;
+                padding: 5px 0px 5px 25px;
+                background-image: url('searchicon.png');
+                background-size: 13px;
+                background-position: 7px 5px; 
+                background-repeat: no-repeat;
+                margin-bottom: 80px;
+                position: relative;
+                top: -6px;
+            }
+
+            /*Focus*/
+            input[type=search]:focus {
+                border: 1px solid #ccc;
+                -webkit-transition: 0.5s;
+                transition: 0.5s;
+                outline: none;
+            }
+
+            /*Center Icons*/
+            .img1{
+                position: absolute;
+                left: 30%;
+                transform: translate(-50%);
+            }
+
+            /*Center Icons Hover*/
+            .img1:hover{
+                width: 30px;
+                cursor: pointer;
+            }
+
+            /*Active*/
+            .img1:active{
+                width: 25px;
+                cursor: pointer;
+            }
+
+            /*Gray Background Icons*/
+            .gray{
+                position: absolute;
+                left: 85%;
+                transform: translate(-50%);
+            }
+
+            /*Right Side Icon*/
+            .img2{
+                position: absolute;
+                left: 85%;
+                top: 14px;
+                transform: translate(-50%);
+                border-radius: 0;
+            }
+
+            /*Hover*/
+            .img2:hover{
+                width: 20px;
+                cursor: pointer;
+            }
+
+            /*Active*/
+            .img2:active{
+                width: 15px;
+                cursor: pointer;
+            }
+
+            /*Upper Side*/
+            .upperside{
+                width: 100%;
+                height: 50%;
+                background-color: #ffffff;
+                border-top: 1px solid #e9e6e6;
+            }
+
+            /*Banner*/
+            .banner{
+                border-radius: 7px;
+                position: relative;
+                left: 16%;
+                position: absolute;
+            }
+
+            /*Cover Header*/
+            .coverheader{
+                width: 884px;
+                height: 140px;
+                border-bottom: 1px solid #e9e6e6;
+                position: absolute;
+                left: 15%;
+                top: 37%;
+            }
+
+            /*User Name*/
+            .username{
+                position: absolute;
+                font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+                margin-left: 17%;
+                margin-top: -8%;
+            }
+
+            /*User Detail*/
+            .userdetail{
+                position: absolute;
+                font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+                margin-left: 17%;
+                margin-top: -4%;
+                font-size: smaller;
+            }
+
+            /*Contact Us*/
+            .contact-button{
+                background-color: #1b74e4;
+                color: white;
+                border: none;
+                border-radius: 4.5px;
+                padding: 10px 70px 10px 80px;
+                font-size: medium;
+                background-image: url('Link.png');
+                background-repeat: no-repeat;
+                background-position: 60px 10px;
+                margin-left: 67%;
+                margin-top: -7%;
+                position: absolute;
+            }
+
+            /*Hover*/
+            .contact-button:hover{
+                cursor: pointer;
+                background-color: #1b71da;
+            }
+
+            /*Active*/
+            .contact-button:active{
+                cursor: pointer;
+                background-size: 12px;
+                font-size: small;
+            }
+
+            /*Share Page*/
+            .sharepage{
+                position: absolute;
+                font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+                font-size: 12px;
+                margin-left: 77%;
+                margin-top: -2%;
+                cursor: pointer;
+            }
+
+            /*Pop-Up & Pop-Up Text Styling*/
+            .popuptext{
+                background-color: whitesmoke;
+                border-radius: 10px;
+                position: absolute;
+                width: auto;
+                height: auto;
+                text-align: center;
+                z-index: 1;
+                padding: 5px 5px 50px 8px;
+                box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.2);
+                right: 130px;
+                top: -90px;
+                font-weight: bolder;
+                font-size: xx-large;
+                font-style: italic;
+                visibility: hidden;
+            }
+
+            .sharepage .show{
+                visibility: visible;
+                -webkit-animation: fadeIn 1s both;
+                animation: fadeIn 1s both;
+            }
+
+            @-webkit-keyframes fadeIn {
+                from {opacity: 0 ;}
+                to {opacity: 1 ;}
+            }
+
+            @keyframes fadeIn {
+                from {opacity: 0 ;}
+                to {opacity: 1 ;}
+            }
+
+            /*Menu*/
+            .menu{
+                width: 100%;
+                height: auto;
+                box-shadow:0 0.5px 2.5px 0 rgb(233, 230, 230);
+                top: 51.9%;
+                left: 0.4px;
+                padding: 35px;   
+                position: absolute;
+            }
+
+            /*Menu Text*/
+            .menu a{
+                position: absolute;
+                font-family: Tahoma, Verdana, sans-serif;
+                font-size: small;
+                border-bottom: 3px solid transparent;
+                text-decoration: none;
+                color: black;
+                display: block;
+                left: 18%;
+                top: 50%;
+                cursor: pointer;
+            }
+
+            /*Menu Active Tab*/
+            .menu a.active{
+                color: #1b74e4;
+                padding-bottom: 8px;
+                border-bottom: 3px solid #1b74e4;
+            }
+
+            /*Menu Like Button*/
+            .like-button{
+                background-color: #E7F3FF;
+                color: #1b74e4;
+                border: none;
+                border-radius: 4.5px;
+                padding: 10px 40px 10px 60px;
+                font-size: medium;
+                background-image: url('Like.png');
+                background-repeat: no-repeat;
+                background-position: 35px 9px;
+                position: absolute;
+                left: 48%;
+                top: 30%;
+            }
+
+            /*Hover*/
+            .like-button:hover{
+                cursor: pointer;
+            }
+
+            /*Active*/
+            .like-button:active{
+                cursor: pointer;
+                background-size: 15px;
+                font-size: small;
+            }
+
+            /*Menu Messenger Button*/
+            .messenger-button{
+                background-color: #E4E6EB;
+                color: black;
+                border: none;
+                border-radius: 4.5px;
+                padding: 10px 40px 10px 60px;
+                font-size: medium;
+                background-image: url('messenger.png');
+                background-repeat: no-repeat;
+                background-position: 35px 9px;
+                position: absolute;
+                left: 59%;
+                top: 30%;
+            }
+
+            /*Hover*/
+            .messenger-button:hover{
+                cursor: pointer;
+            }
+
+            /*Active*/
+            .messenger-button:active{
+                cursor: pointer;
+                background-size: 15px;
+                font-size: small;
+            }
+
+            /*Menu Messenger Button*/
+            .search-button{
+                background-color: #E4E6EB;
+                border: none;
+                border-radius: 4.5px;
+                padding: 12px 10px 10px 40px;
+                background-image: url('Black\ search.png');
+                background-repeat: no-repeat;
+                background-position: 18px 10px;
+                position: absolute;
+                left: 74%;
+                top: 30%;
+            }
+
+            /*Hover*/
+            .search-button:hover{
+                cursor: pointer;
+            }
+
+            /*Active*/
+            .search-button:active{
+                cursor: pointer;
+                background-size: 13px;
+            }
+
+            /*Menu Three-Dots Button*/
+            .dots-button{
+                background-color: #E4E6EB;
+                border: none;
+                border-radius: 4.5px;
+                padding: 12px 5px 10px 40px;
+                background-image: url("3 dots.png");
+                background-repeat: no-repeat;
+                background-position: 14px 10px;
+                position: absolute;
+                left: 78.5%;
+                top: 30%;
+            }
+
+            /*Hover*/
+            .dots-button:hover{
+                cursor: pointer;
+            }
+
+            /*Active*/
+            .dots-button:active{
+                cursor: pointer;
+                background-size: 13px;
+            }
+
+            /*Lower Side*/
+            .lowerside{
+                margin-top: 38.3%;
+                width: 100%;
+                box-sizing: border-box;
+                background-color: #F0F2F5;
+                min-height: 200vh;
+                position: relative;
+            }
+
+            /*Left Side*/
+            .lowerside-left{
+                width: 360px;
+                top: 5%;
+                margin-left: 17%;
+                margin-bottom: 0.5%;
+                margin-top: -6%;
+                border-radius: 8px;
+                display: block;
+                background-color: white;
+                overflow-x: hidden;
+                overflow-y: hidden;
+                box-shadow: 0px 1px 2px 0px rgb(0, 0, 0, 0.2);
+                position: absolute;
+            }
+
+            /*Left Side Text*/
+            .lowerside-left-text{
+                font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+                padding: 10px 16px 4px;
+                position: relative;
+            }
+
+            /*Left Side Icon*/
+            .lowerside-left-icon{
+                padding: 5px 16px 4px;
+                position: relative;
+                border: none;
+                border-radius: 0;
+            }
+
+            /*Hide Extra long text*/
+            .text-preview{
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+            }
+
+            /*Height after full text*/
+            .lowerside-left-fulltext{
+                height: 410px;
+            }
+
+            /*See More*/
+            .seemore{
+                font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+                font-size: 15px;
+                font-weight: 600;
+                overflow: visible;
+                position: absolute;
+            }
+
+            .seemore:hover{
+                cursor: pointer;
+                text-decoration: underline;
+            }
+
+            /*See Less*/
+            .seeless{
+                font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+                font-size: 15px;
+                font-weight: 600;
+                position: absolute;        
+            }
+
+            .seeless:hover{
+                cursor: pointer;
+                text-decoration: underline;
+            }
+
+            /*Right Side*/
+            .lowerside-right{
+                width: 480px;
+                top: 5%;
+                margin-left: 47%;
+                margin-bottom: 0.5%;
+                margin-top: -6%;
+                border-radius: 8px;
+                display: block;
+                background-color: white;
+                overflow-x: hidden;
+                overflow-y: hidden;
+                box-shadow: 0px 1px 2px 0px rgb(0, 0, 0, 0.2);
+                position: absolute;
+            }
+
+            /*Right Side Text*/
+            .lowerside-right-text{
+                font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+                position: relative;    
+            }
+
+            /*Right Side Icon*/
+            .lowerside-right-icon{
+                padding: 5px 16px 4px;
+                position: relative;
+                border: none;
+                border-radius: none;
+            }
+
+            .facebook{
+                font-weight: 600; 
+                font-size: 100; 
+                top: -65px; 
+                left: 75px;
+                font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+                position: relative;    
+            }
+
+            .facebook:hover{
+                cursor: pointer; 
+                text-decoration: underline;
+            }
+
+            .post-description{
+                font-size: 15px; 
+                padding-left: 4%; 
+                padding-right: 4%; 
+                margin-top: -28%;
+                font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+                position: relative;    
+            }
+
+            /*Post Timming*/
+            .post-timming{
+                font-size: 13px; 
+                top: -80px; 
+                left: 75px; 
+                cursor: pointer;
+                font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+                position: relative;    
+            }
+
+            #count-comment{
+                left: 73%; 
+                margin-top: -7.2%; 
+                font-size: 15px;
+                font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+                position: relative;  
+            }
+
+            #count-comment:hover{
+                cursor: pointer;
+                text-decoration: underline;
+            }
+
+            #count-share{
+                left: 87%;  
+                margin-top: -7.4%; 
+                font-size: 15px;
+                font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+                position: relative;  
+            }
+
+            #count-share:hover{
+                cursor: pointer;
+                text-decoration: underline;
+            }
+
+            /*Post Count Love*/
+            .post-count-love{
+                margin-left: 11%;  
+                margin-top: -5.8%; 
+                font-size: 15px;
+                font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+                position: relative;
+            }
+
+            /*Like on Post*/
+            .count-bottom1{
+                font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+                font-weight: 600;
+                color: #65676b;
+                background-color: white;
+                border: none;
+                border-radius: 4.5px;
+                padding: 10px 70px 9px 100px;
+                font-size: medium;
+                background-image: url('stroke_like.png');
+                background-size: 20px;
+                background-repeat: no-repeat;
+                background-position: 70px 9px;
+                margin-left: 5%;
+                margin-top: -5%;
+                position: relative;
+            }
+
+            .count-bottom1:hover{
+                background-color: #efefef;
+                cursor: pointer;
+            }
+
+            .count-bottom1:active{
+                background-color: #efefef;
+                cursor: pointer;
+                font-size: 14px;
+                background-size: 18px;
+            }
+
+            /*Comment on Post*/
+            .count-bottom2{
+                font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+                font-weight: 600;
+                color: #65676b;
+                background-color: white;
+                border: none;
+                border-radius: 4.5px;
+                padding: 10px 60px 9px 100px;
+                font-size: medium;
+                background-image: url('comment.png');
+                background-size: 20px;
+                background-repeat: no-repeat;
+                background-position: 70px 12px;
+                margin-left: 1%;
+                margin-top: -2.5%;
+                position: absolute;
+            }
+
+            .count-bottom2:hover{
+                background-color: #efefef;
+                cursor: pointer;
+            }
+
+            .count-bottom2:active{
+                background-color: #efefef;
+                cursor: pointer;
+                font-size: 14px;
+                background-size: 18px;
+            }
+
+            input[id=writecomment]{
+                background-image: url('Reaction.png');
+                background-repeat: no-repeat;
+                background-position: 305px 5px;
+                padding: 10px 230px 5px 10px;
+                margin-left: 11%;
+                margin-top: -8%;
+                position: absolute;
+                background-color: #F0F2F5;
+                border: 0;
+                border-radius: 20px;
+            }
+
+            /*Commenter Name*/
+            .commenter-name{
+                font-size: 13px; 
+                font-weight: 500; 
+                cursor: pointer;
+                font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+                position: relative;    
+            }
+
+            /*Comment*/
+            .comment{
+                font-size: 15px; 
+                top: -6px;
+                font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+                position: relative;    
+            }
+
+            .comment-time{
+                font-size: 11px; 
+                left: 17%; 
+                top: -10px; 
+                color: #65676b;
+                font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+                position: relative;
+            }
+
+            .comment-time:hover{
+                cursor: pointer;
+                text-decoration: underline;
+            }
+
+            /*Photos Section*/
+            .photo-section{
+                width: 360px;
+                top: 32%;
+                margin-left: 17%;
+                margin-bottom: 0.5%;
+                margin-top: -6%;
+                border-radius: 8px;
+                display: block;
+                background-color: white;
+                overflow-x: hidden;
+                overflow-y: hidden;
+                box-shadow: 0px 1px 2px 0px rgb(0, 0, 0, 0.2);
+                position: absolute;
+                cursor: pointer;
+            }
+
+            /*Photo Text*/
+            .photo-text{
+                font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+                padding: 10px 16px 4px;
+                position: relative;
+            }
+
+            .photo-in-photo{
+                border-radius: 0; 
+                width: 104px; 
+                height: 104px;
+                margin: 15px;
+                margin-top: 5px;
+            }
+            /*Video Section*/
+            .video-section{
+                width: 360px;
+                top: 50.8%;
+                margin-left: 17%;
+                margin-bottom: 0.5%;
+                margin-top: -6%;
+                border-radius: 8px;
+                display: block;
+                background-color: white;
+                overflow-x: hidden;
+                overflow-y: hidden;
+                box-shadow: 0px 1px 2px 0px rgb(0, 0, 0, 0.2);
+                position: absolute;
+                cursor: pointer;
+            }
+
+            /*Video Text*/
+            .video-text{
+                font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+                padding: 10px 16px 4px;
+                position: relative;
+            }
+
+            /*Video Cover*/
+            .video-cover{
+                border-radius: 7px; 
+                width: 340px; 
+                height: 200px;
+                margin-bottom: 10px;
+                margin-left: 10px;
+                object-fit:cover;
+            }
+
+            .video-cover:hover{
+                cursor: pointer;
+                filter: brightness(95%);
+            }
+
+            /*Video Timing*/
+            .video-timing{
+                background-color: rgb(0, 0, 0, 0.5);
+                color: white;
+                width: 50px;
+                height: 22px;
+                bottom: 100px;
+                right: 16px;
+                position: absolute;
+                border-radius: 4px;
+                text-align: center;
+            }
+
+            /*Video Title*/
+            .video-title{
+                font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+                font-size: 17px;
+                font-weight: 600;
+                padding-left: 10px;
+                padding-right: 10px;
+                bottom: 20px;
+                position: relative;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .video-title:hover{
+                cursor: pointer;
+                text-decoration: underline;
+            }
+
+            /*Video Icon*/
+            .video-icon{
+                padding-left: 12px;
+                padding-right: 22px;
+                bottom: 35px;
+                position: relative;
+                border: none;
+                border-radius: 0;
+            }
+
+            /*Video Count Love*/
+            .video-count-love{
+                margin-left: 14%;  
+                margin-top: -16%; 
+                font-size: 14px;
+                font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+                position: relative;
+            }
+
+            .video-count-love:hover{
+                cursor: pointer;
+                text-decoration: underline;
+            }
+
+            /*Video Couut View*/
+            .video-count-view{
+                left: 12px; 
+                margin-top: -3%; 
+                font-size: 13px; 
+                font-weight: 400; 
+                color: #65676b;
+                font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+                position: relative;
+            }
+
+            .video-count-view:hover{
+                cursor: pointer;
+                text-decoration: underline;
+            }
+
+            /*Page transparency Section*/
+            .page-transparency-section{
+                width: 360px;
+                top: 51%;
+                margin-left: 17%;
+                margin-bottom: 0.5%;
+                margin-top: 24%;
+                padding-bottom: 20px;
+                border-radius: 8px;
+                display: block;
+                background-color: white;
+                overflow-x: hidden;
+                overflow-y: hidden;
+                box-shadow: 0px 1px 2px 0px rgb(0, 0, 0, 0.2);
+                position: absolute;
+                cursor: pointer;
+            }
+
+            /*Page transparency Icon*/
+            .page-transparency-icon{
+                position: relative;
+                width: 20px;
+                top: 45px;
+                left: 15px;
+            }
+
+            /*Page transparency Text*/
+            .page-transparency-text{
+                font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+                padding-left: 12%;
+                position: relative;
+            }
+
+            /*Page transparency Description*/
+            .page-transparency-desciption{
+                font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+                color: #65676b;
+                font-size: 15px;
+                font-weight: 400;
+                word-wrap: break-word;
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            /*Responsible*/
+            .responsible{
+                background-image: url(responsible.png);
+                background-repeat: no-repeat;
+                background-position: 4% 4%;
+                background-size: 20px;
+                font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+                padding-left: 12%;
+                font-weight: 600;
+                position: relative;
+            }
+
+            /*Responsible Background*/
+            .responsible-background{
+                width: 32px; 
+                position: absolute; 
+                top: 78%; 
+                left: 1.9%; 
+                z-index: 0;
+            }
+        </style>
+        
+        <!--Share Buttons 1st row-->
+        <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=64ba636299ed020012e4a0a2&product=inline-share-buttons&source=platform" async="async"></script>
+    </head>
+    <body>
+
+        <div class="header">
+            
+        <!--Center Icons-->
+        <img class="img1" src="homepage.png" onClick="window.location.reload(true)">
+        <img class="img1" src="watch.png" style="left: 40%;">
+        <img class="img1" src="marketplace.png" style="left: 50%;">
+        <img class="img1" src="Frame.png" style="left: 60%;">
+
+        <!--Gray Background Icon-->
+        <img class="gray" src="background.png" width="30px">
+        <img class="gray" src="background.png" width="30px" style="left: 89%;">
+        <img class="gray" src="background.png" width="30px" style="left: 93%;">
+        <img class="gray" src="background.png" width="30px" style="left: 97%;">
+
+        <!--Right Side Icon-->
+        <img class="img2" src="9 dots.png" width="17px">
+        <img class="img2" src="messenger.png" width="17px" style="left: 89%;">
+        <img class="img2" src="bell.png" width="17px" style="left: 93%;">
+        <img class="img2" src="bell.png" width="17px" style="left: 97%;">
+            
+            <!--Search Box-->
+            <form>
+                <img src="Fcebook Icon.png" width="25px" onClick="window.location.reload(true)">
+                <input type="text" id="search" placeholder="Search Facebook">
+            </form>
+
+        </div>
+
+        <!--Upperside-->
+        <div class="upperside">
+            <!--Banner-->
+            <img class="banner" src="Banner.jpg" width="820px" height="312px">
+        </div>
+
+        <!--Cover Header-->
+        <div class="coverheader">
+            <!--Profile Picture-->
+            <img src="Fcebook Icon.png" width="130px" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+            <!--User Name-->
+            <h2 class="username">Facebook</h2>
+            <img class="username" title="Verified Account" src="Verified.png" width="13px" style="margin-left: 15%; margin-top: 8.3%;">
+            <!--user detail-->
+            <p class="userdetail tooltip">@facebook<span class="tooltiptext" style="padding: 5px 0; width: 300px;">Search for @facebook on Facebook or in Messenger to find this page easily</span></p>
+            <p class="userdetail" style="margin-left: 26%;">.</p>
+            <img class="userdetail" src="Star.png" width="15px" style="margin-left: 13%; margin-top: 11.5%;">
+            <p class="userdetail" style="margin-left: 30%;">2.91B followers</p>
+            <p class="userdetail" style="margin-left: 41.5%;">.</p>
+            <p class="userdetail" style="margin-left: 43%;">Internet company</p>
+            <!--Contact Us-->
+            <form>
+                <input type="button" id="contact" class="contact-button" value="Contact Us">
+            </form>
+            <!--Share Page-->
+            <div class="sharepage" onclick="myFunction()">Share page 
+                <span class="popuptext" id="myPopup">Share
+                    <div class="sharethis-inline-share-buttons" style="margin-top: 50px; margin-left: 6px; width: 350px;"></div>
+                </span>
+            </div>
+
+            <img class="sharepage" src="Share Page.png" style="margin-left: 74.9%; border-radius: 0; width: 13px; margin-top: -1.8%;">
+                        
+            <script>
+                function myFunction() {
+                    var popup = document.getElementById("myPopup");
+                    popup.classList.toggle("show");
+                }
+            </script>    
+        </div>
+
+        <!--Menu-->
+        <div class="menu">
+
+            <!--Menu Tabs-->
+            <a class="active" href="#posts" style="padding: 10px; margin-top: -1%;">Posts</a>
+            <a href="#about" style="padding-left: 5.5%;">About</a>
+            <a href="#videos" style="padding-left: 10.5%;">Videos</a>
+            <a href="#photos" style="padding-left: 15.5%;">Photos</a>
+            <a href="#more" style="padding-left: 20.5%;">More</a>
+            <img src="Dropdown.png" style="padding-left: 38%; margin-top: 0.3%; position: absolute;">
+
+            <!--Menu Buttons-->
+            <form>
+                <!--Like Button-->
+                <input type="button" id="Like" class="like-button" value="Like">
+                <!--Messenger Button-->
+                <input type="button" id="Messanger" class="messenger-button" value="Messanger">
+                <!--Search Button-->
+                <input type="button" id="search-button" class="search-button">
+                <!--Three Dots-->
+                <input type="button" id="three-button" class="dots-button">
+            </form>
+        </div>
+
+        <!--Lower Side-->
+        <div class="lowerside">
+
+            <!--Left Side-->
+            <div class="lowerside-left" id="about-section">
+                <!--Left Side Text-->
+                <h3 class="lowerside-left-text" style="font-weight: bolder;">About</h3>
+                <p class="lowerside-left-text" style="color:#216fdb; font-size: small; font-weight:light; padding-left: 85%; margin-top: -14%;cursor: pointer;">See all</p>
+                <!--Left Side Icon and Text-->
+                <img class="lowerside-left-icon" src="I icon.png">
+                <p class="lowerside-left-text" style="font-size: 15px; padding-left: 13%; margin-top: -11%;">The Facebook app Page celebrates how our friends inspire us, support us, and help us discover the world when we connect.</p>
+                <!--Left Side Icon and Text-->
+                <img class="lowerside-left-icon" src="I icon.png">
+                <p class="lowerside-left-text text-preview" style="font-size: 15px; padding-left: 13%; margin-top: -11%;">Community Values<br>
+                    We believe people can do more together than alone and that each of us plays an important role in helping to create a safe and respectful community. So, we’ve laid out a set of principles for us to follow on this Page:<br><br>
+                    Let’s celebrate the things that bring us together.<br><br>
+                    Let’s choose to treat each other like neighbors rather than strangers.<br><br>
+                    Let’s respect individuality and welcome diverse backgrounds and perspectives.<br><br>
+                    Let’s assume people mean well.<br><br>
+                    Our moderators are here for the community to uphold these values every day.</p>
+                    <!--See More-->
+                    <span class="seemore" onclick="toggleOverflow()" style="left: 13%; bottom: 43%;">See more</span>
+                    <script>
+                    function toggleOverflow() {
+                        var paragraph = document.querySelector('.lowerside-left-text.text-preview');
+                        var seeMore = document.querySelector('.seemore');
+                        var seeLess = document.querySelector('.seeless');
+
+                        if (paragraph.classList.contains('lowerside-left-fulltext')) {
+                        // If the text is in full view, clicking "See more" should show truncated text
+                        paragraph.classList.remove('lowerside-left-fulltext');
+                        seeMore.style.display = 'block';
+                        seeLess.style.display = 'none';
+                        } else {
+                        // If the text is truncated, clicking "See more" should show the full text
+                        paragraph.classList.add('lowerside-left-fulltext');
+                        seeMore.style.display = 'none';
+                        seeLess.style.display = 'block';
+                        }
+                                                }
+                    </script>
+                    <span class="seeless" onclick="toggleOverflow()" style="display: none; left: 13%; bottom: 43%;">See less</span><!--See Less-->
+                <!--Left Side Icon and Text-->
+                <img class="lowerside-left-icon" src="black_like.png" style="bottom: -13px;">
+                <p class="lowerside-left-text" style="font-size: 15px; padding-left: 13%; margin-top: -7%;">183,205,742 people like this</p>
+                <!--Left Side Icon and Text-->
+                <img class="lowerside-left-icon" src="follow.png" style="margin-top: -6px;">
+                <p class="lowerside-left-text" style="font-size: 15px; padding-left: 13%; margin-top: -11%;">188,661,607 people follow this</p>
+                <!--Left Side Icon and Text-->
+                <img class="lowerside-left-icon" src="check.png" style="margin-top: -6px;">
+                <p class="lowerside-left-text" style="font-size: 15px; padding-left: 13%; margin-top: -11%;">118 people checked in here</p>
+                <!--Left Side Icon and Text-->
+                <img class="lowerside-left-icon" src="World.png" style="margin-top: -6px;">
+                <p class="lowerside-left-text" style="font-size: 15px; padding-left: 13%; margin-top: -11%;"><a href="http://fb.me/HowToContactFB" style="color: #216fdb; text-decoration: none;">http://fb.me/HowToContactFB</a></p>
+                <!--Left Side Icon and Text-->
+                <img class="lowerside-left-icon" style="margin-top: -6px; margin-left: 15px; background-image: url(file.png); background-repeat: no-repeat; background-position: 0px -300px; filter: contrast(0); height: 20px; width: 20px;">
+                <p class="lowerside-left-text" style="font-size: 15px; padding-left: 13%; margin-top: -9%;"><a href="https://www.facebook.com/pages/category/internet-company" style="color: #216fdb; text-decoration: none;">Internet Company</a></p>
+
+            </div>
+
+            <!--Right Side-->
+            <div class="lowerside-right">
+                <img class="lowerside-right-icon" src="Fcebook Icon.png" style="width: 80px; margin-top: 10px;">
+                <p class="facebook">Facebook</p>
+
+                <!--Account Verification-->
+                <img class="lowerside-left-icon" src="Verified.png" title="Verified Account" style="width: 42px; top: 22px; left: 132px; position: absolute;">
+
+                <!--Post Timming-->
+                <p class="post-timming tooltip">20 hours ago<span class="tooltiptext" style= "width: 300px; padding: 10px; margin-left: -130px; top: 30px; position: relative;">Friday, 4 August 2023 at 8:32 AM</span></p>
+                <p class="lowerside-right-text" style="font-size: 13px; top: -108px; left: 155px;">•</p>
+
+                <div class="tooltip">
+                <img class="lowerside-right-icon" title="Shared with Public" src="public.png" style="width: 45px; top: -140px; right: -150px;">
+                <span class="tooltiptext" style=" position: relative; padding: 10px; font-size: small; left: 100px; top: -175px; width: 300px; ">Public</span>
+                </div>
+
+                <!--Post Description-->
+                <p class="post-description">Stay up-to-date on the latest news and events with Facebook 🤩. Check out your news feed to see what's happening in the world, and connect with friends and family 👫 to share your thoughts.</p>
+                <img src="Post.png" style="border-radius: 0; width: 500px; height: 500px;">
+
+                <img class="lowerside-right-icon" src="post_like.png" style="z-index: 1;">
+                <img class="lowerside-right-icon" src="love.png" style="left: -40px;">
+
+                <p class="post-count-love">4.4 K</p>
+
+                <img class="lowerside-right-icon" src="comment.png" style="border-radius: 0; left: 78%;  margin-top: -7.3%; position: absolute;">
+                <p class="tooltip" id="count-comment">2.5 K <span class="tooltiptext" style="width: 100px; padding: 10px 10px; margin-left: -5%; top: 20px; text-align: left; font-size: 13px;">Emily Johnson
+                                                                                                                                                                                                                                                                        Michael Lee
+                                                                                                                                                                                                                                                                        Olivia Patel
+                                                                                                                                                                                                                                                                        Ethan Chen
+                                                                                                                                                                                                                                                                        Ava Martinez
+                                                                                                                                                                                                                                                                        Noah Kim
+                                                                                                                                                                                                                                                                        Sophia Gupta
+                                                                                                                                                                                                                                                                        Liam Rodriguez</span></p>
+                <img class="lowerside-right-icon" src="share.png" style="border-radius: 0; left: 90%; margin-top: -8%; position: absolute;">
+                <p class="tooltip" id="count-share">303<span class="tooltiptext" style="width: 90px; padding: 10px 10px; margin-left: -15%; top: 20px; text-align: left; font-size: 13px;">Anya Rose
+                                                                                                                                                                                                                                                                        Vi Keh Tory
+                                                                                                                                                                                                                                                                        Jaxon
+                                                                                                                                                                                                                                                                        Willow</span></p>
+
+                <p style="border-bottom: 1px solid #ced0d4; margin-left: 4%; margin-right: 4%;"></p>
+
+                <form>
+                    <!--Like on Post-->
+                    <input class="count-bottom1" type="button" value="Like">
+                    <!--Comment on Post-->
+                    <input class="count-bottom2" type="button" value="Comment">
+                </form>
+
+                <p style="border-bottom: 1px solid #ced0d4; margin-left: 4%; margin-right: 4%; margin-top: 1%;"></p>
+
+                <!--Commenter Profile-->
+                <img class="lowerside-right-icon" src="People.png">
+                <!--Comment Background-->
+                <div style="background-color: #F0F2F5; border-radius: 20px; display: inline-block; padding: 0px 10px;">
+                    <!--Commenter Name-->
+                    <p class="commenter-name">Joana Almeida</p>
+                    <!--Comment-->
+                    <p class="comment">It's fantastic! Thank You🎉</p>
+                </div>
+
+                <!--Comment Timming-->
+                <p class="comment-time tooltip">9 h<span class="tooltiptext" style="width: 300px; padding: 10px; margin-left: 1%; top: 20px; position: relative;">Friday, 4 August 2023 at 11:32 PM</span></p>
+
+                <!--Me Profile-->
+                <img class="lowerside-right-icon" src="Me.png">
+                <form>
+                    <input type="text" id="writecomment" placeholder="Write a Comment">
+                </form>
+            </div>
+
+            <!--Photo Section-->
+            <div class="photo-section" id="photos-section">
+                <!--Photo Text-->
+                <h3 class="photo-text" style="font-weight: bolder;">Photos</h3>
+                <p class="photo-text" style="color:#216fdb; font-size: small; font-weight:light; padding-left: 85%; margin-top: -14%;cursor: pointer;">See all</p>
+                <!--Photos-->
+                <img class="photo-in-photo" src="1.jpg" style="border-top-left-radius: 10px;">
+                <img class="photo-in-photo" src="2.png" style="margin-left: -9px;">
+                <img class="photo-in-photo" src="3.jpg" style="border-top-right-radius: 10px; margin-right: 5px; margin-left: -9px;">
+                <img class="photo-in-photo" src="4.png" style="border-bottom-left-radius: 10px;  margin-top: -10px;">
+                <img class="photo-in-photo" src="5.jpg" style="margin-left: -9px; margin-top: -10px;">
+                <img class="photo-in-photo" src="6.jpeg" style="border-bottom-right-radius: 10px; margin-right: 5px; margin-left: -9px;  margin-top: -10px;">
+            </div>
+
+            <!--Videos Section-->
+            <div class="video-section" id="videos-section">
+                <!--Videos Text-->
+                <h3 class="video-text">Videos</h3>
+                <p class="video-text" style="color:#216fdb; font-size: small; font-weight:light; padding-left: 85%; margin-top: -14%;cursor: pointer;">See all</p>
+                <!--Video Cover-->
+                <img class="video-cover" src="Video_Cover.jpg">
+                <!--Video Timing-->
+                <div class="video-timing">1:08</div>
+                <!--Video Title-->
+                <p class="video-title">NEW to Facebook Groups! 🚨 There are now more ways to</p>
+                <!--Video Icon-->
+                <img class="video-icon" src="post_like.png" style="z-index: 1;">
+                <img class="video-icon" src="love.png" style="left: -39.5px;">
+                <!--Counting-->
+                <p class="video-count-love">9.1 K</p>
+                <p class="video-count-view">213.6K views  · 44 weeks ago</p>
+            </div>
+
+            <!--Page transparency Section-->
+            <div class="page-transparency-section" id="transparency-section">
+                <!--Page transparency Text-->
+                <img class="page-transparency-icon" src="Fcebook Icon.png">
+                <h3 class="page-transparency-text">Page transparency</h3>
+                <p class="video-text" style="color:#216fdb; font-size: small; font-weight:light; padding-left: 85%; margin-top: -14%;cursor: pointer;">See all</p>
+                <!--Page transparency Description-->
+                <p class="page-transparency-desciption">Facebook is showing information to help you better understand the purpose of a Page. See actions taken by the people who manage and post content.</p>
+                <!--Responsible Text-->
+                <img class="responsible-background" src="background.png">
+                <div class="responsible">Facebook, Inc. is responsible for this Page.</div>
+            </div>
+
+            <!--Adjust sections when "See more" text clicked-->
+            <script>
+                function toggleOverflow() {
+                    var aboutSection = document.getElementById("about-section");
+                    var otherSections = document.querySelectorAll(".photo-section, .video-section");
+                    var lastSections = document.querySelectorAll(".page-transparency-section");
+                    var paragraph = document.querySelector('.lowerside-left-text.text-preview');
+
+                    paragraph.classList.toggle('lowerside-left-fulltext');
+
+                    if (paragraph.classList.contains('lowerside-left-fulltext')) {
+                        // Expand the About section
+                        var aboutHeight = aboutSection.offsetHeight;
+                        aboutSection.style.marginTop = "-6%";
+
+                        // Adjust other sections
+                        otherSections.forEach(section => {
+                            section.style.marginTop = "19%";
+                        });
+
+                        // Adjust Page-Transparency sections
+                        lastSections.forEach(section => {
+                            section.style.marginTop = "49%";
+                        });
+
+                    } else {
+                        // Collapse the About section
+                        aboutSection.style.marginTop = "";
+
+                        // Reset other sections
+                        otherSections.forEach(section => {
+                            section.style.marginTop = "";
+                        });
+
+                        // Reset Page-Transparency sections
+                        lastSections.forEach(section => {
+                            section.style.marginTop = "24%";
+                        });
+                    }
+                }
+            </script>
+        </div>
+    </body>
+</html>
