@@ -226,6 +226,24 @@ input[type=search]:focus {
     to {opacity: 1 ;}
 }
 
+/* The Close Button */
+.close {
+    position: absolute;
+    top: -2%;
+    right: 4%;
+    color: #000000;
+    font-size: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 /*Menu*/
 .menu{
     width: 100%;
