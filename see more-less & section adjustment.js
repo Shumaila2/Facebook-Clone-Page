@@ -3,13 +3,13 @@ function toggleOverflow() {
     var aboutSection = document.getElementById("about-section");
     var otherSections = document.querySelectorAll(".photo-section, .video-section");
     var lastSections = document.querySelectorAll(".page-transparency-section");
-    var paragraph = document.querySelector('.lowerside-left-text.text-preview');
+    var paragraph = document.querySelector('.about-text.text-preview');
     var seeMore = document.querySelector('.seemore');
     var seeLess = document.querySelector('.seeless');
 
-    if (paragraph.classList.contains('lowerside-left-fulltext')) {
+    if (paragraph.classList.contains('about-fulltext')) {
         // If the text is in full view, clicking "See more" should show truncated text
-        paragraph.classList.remove('lowerside-left-fulltext');
+        paragraph.classList.remove('about-fulltext');
         seeMore.style.display = 'block';
         seeLess.style.display = 'none';
 
@@ -23,7 +23,7 @@ function toggleOverflow() {
         });
     } else {
         // If the text is truncated, clicking "See more" should show the full text
-        paragraph.classList.add('lowerside-left-fulltext');
+        paragraph.classList.add('about-fulltext');
         seeMore.style.display = 'none';
         seeLess.style.display = 'block';
 
