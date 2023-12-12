@@ -17,7 +17,7 @@
         <!--Share Buttons 1st row-->
         <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=64ba636299ed020012e4a0a2&product=inline-share-buttons&source=platform" async="async"></script>
     </head>
-    <body ontouchstart="">
+    <body>
 
         <div class="header">
             
@@ -61,14 +61,14 @@
             <h2 class="username">Facebook</h2>
             <img class="username user-verify" title="Verified Account" src="Verified.png">
             <!--user detail-->
-            <p id="mention" class="userdetail tooltip">@facebook<span class="tooltiptext" style="padding: 5px 0; width: 300px;">Search for @facebook on Facebook or in Messenger to find this page easily</span></p>
+            <p id="mention" class="userdetail tooltip">@facebook<span class="tooltiptext" id="mention-tooltip">Search for @facebook on Facebook or in Messenger to find this page easily</span></p>
             <p id="seperator" class="userdetail" style="margin-left: 26%;">.</p>
 
             <img id="follower-icon" class="userdetail" src="Star.png">
             <p id="follower-count" class="userdetail">2.91B followers</p>
 
             <p id="seperator" class="userdetail" style="margin-left: 41.5%;">.</p>
-            <p id="internet-company" class="userdetail" style="margin-left: 43%;">Internet company</p>
+            <p id="internet-company" class="userdetail">Internet company</p>
             <!--Contact Us-->
             <form>
                 <input type="button" id="contact" class="contact-button" value="Contact Us">
@@ -92,12 +92,12 @@
         <div class="menu">
 
             <!--Menu Tabs-->
-            <a id="post-tab" class="active" href="#posts" style="padding: 10px; margin-top: -1%;">Posts</a>
-            <a id="about-tab" href="#about" style="padding-left: 5.5%;">About</a>
-            <a id="video-tab" href="#videos" style="padding-left: 10.5%;">Videos</a>
-            <a id="photo-tab" href="#photos" style="padding-left: 15.5%;">Photos</a>
-            <a id="more-tab" href="#more" style="padding-left: 20.5%;">More</a>
-            <img id="dropdown-tab" src="Dropdown.png" style="padding-left: 38%; margin-top: 0.3%; position: absolute;">
+            <a id="post-tab" class="active" href="#posts">Posts</a>
+            <a id="about-tab" href="#about">About</a>
+            <a id="video-tab" href="#videos">Videos</a>
+            <a id="photo-tab" href="#photos">Photos</a>
+            <a id="more-tab" href="#more">More</a>
+            <img id="dropdown-tab" src="Dropdown.png">
 
             <!--Menu Buttons-->
             <form>
@@ -173,7 +173,7 @@
 
                 <!--Post Description-->
                 <p class="post-description">Stay up-to-date on the latest news and events with Facebook 🤩. Check out your news feed to see what's happening in the world, and connect with friends and family 👫 to share your thoughts.</p>
-                <img src="Post.png" id="post-img">
+                <img class="post-img">
 
                 <img class="lowerside-right-icon" id="post-like-icon" src="post_like.png">
                 <img class="lowerside-right-icon" id="post-love-icon" src="love.png">

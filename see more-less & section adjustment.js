@@ -1,11 +1,12 @@
-// Combined 'See more'/'See less' and section adjustment
 function toggleOverflow() {
     var aboutSection = document.getElementById("about-section");
-    var otherSections = document.querySelectorAll(".photo-section, .video-section");
+    var photoSection = document.querySelectorAll(".photo-section");
+    var videoSection = document.querySelectorAll(".video-section");
     var lastSections = document.querySelectorAll(".page-transparency-section");
     var paragraph = document.querySelector('.about-text.text-preview');
     var seeMore = document.querySelector('.seemore');
     var seeLess = document.querySelector('.seeless');
+    var postSections = document.querySelectorAll(".lowerside-right");
 
     if (paragraph.classList.contains('about-fulltext')) {
         // If the text is in full view, clicking "See more" should show truncated text
@@ -15,11 +16,17 @@ function toggleOverflow() {
 
         // Reset the About section
         aboutSection.style.marginTop = "";
-        otherSections.forEach(section => {
+        photoSection.forEach(section => {
+            section.style.marginTop = "";
+        });
+        videoSection.forEach(section => {
             section.style.marginTop = "";
         });
         lastSections.forEach(section => {
             section.style.marginTop = "24%";
+        });
+        postSections.forEach(section => {
+            section.style.marginTop = "";
         });
     } else {
         // If the text is truncated, clicking "See more" should show the full text
@@ -30,14 +37,40 @@ function toggleOverflow() {
         // Adjust the About section
         aboutSection.style.marginTop = "-6%";
 
-        // Adjust other sections
-        otherSections.forEach(section => {
-            section.style.marginTop = "19%";
-        });
+        // Use media queries to set different margin values for desktop and mobile
+        if (window.matchMedia("(min-width: 601px)").matches) {
+            // Desktop view
+            photoSection.forEach(section => {
+                section.style.marginTop = "19%";
+            });
 
-        // Adjust Page-Transparency sections
-        lastSections.forEach(section => {
-            section.style.marginTop = "49%";
-        });
+            videoSection.forEach(section => {
+                section.style.marginTop = "19%";
+            });
+
+            lastSections.forEach(section => {
+                section.style.marginTop = "49%";
+            });
+
+            postSections.forEach(section => {
+                section.style.marginTop = "-6%";
+            });
+        } else {
+            // Mobile view
+            photoSection.forEach(section => {
+                section.style.marginTop = "110%";
+            });
+
+            videoSection.forEach(section => {
+                section.style.marginTop = "113%";
+            });
+
+            postSections.forEach(section => {
+                section.style.marginTop = "115%";
+            });
+        }
     }
 }
+
+// Add an event listener for window resize to handle changes in screen width
+window.addEventListener('resize', toggleOverflow);

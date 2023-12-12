@@ -187,6 +187,11 @@ input[type=search]:focus {
     font-size: smaller;
 }
 
+#mention-tooltip{
+    padding: 5px 0; 
+    width: 300px;
+}
+
 #follower-icon{
     margin-left: 13%; 
     margin-top: 11.5%;
@@ -195,6 +200,10 @@ input[type=search]:focus {
 
 #follower-count{
     margin-left: 30%;
+}
+
+#internet-company{
+    margin-left: 43%;
 }
 
 /*User Verification*/
@@ -349,6 +358,39 @@ hr{
     color: #1b74e4;
     padding-bottom: 8px;
     border-bottom: 3px solid #1b74e4;
+}
+
+#post-tab{
+    padding: 10px; 
+    margin-top: -1%;
+    cursor: pointer;
+}
+
+#about-tab{
+    padding-left: 5.5%;
+    cursor: pointer;
+}
+
+#video-tab{
+    padding-left: 10.5%;
+    cursor: pointer;
+}
+
+#photo-tab{
+    padding-left: 15.5%;
+    cursor: pointer;
+}
+
+#more-tab{
+    padding-left: 20.5%;
+    cursor: pointer;
+}
+
+#dropdown-tab{
+    padding-left: 38%; 
+    margin-top: 0.3%; 
+    position: absolute;
+    cursor: pointer;
 }
 
 /*Menu Like Button*/
@@ -732,10 +774,11 @@ hr{
     width: 300px; 
 }
 
-#post-img{
+.post-img{
     border-radius: 0; 
     width: 500px; 
     height: 500px;
+    background-image: url(Post.png);
 }
 
 #post-like-icon{
