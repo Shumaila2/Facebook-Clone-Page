@@ -38,7 +38,7 @@ function toggleOverflow() {
         aboutSection.style.marginTop = "-6%";
 
         // Use media queries to set different margin values for desktop and mobile
-        if (window.matchMedia("(min-width: 601px)").matches) {
+        if (window.matchMedia("(min-width: 1280px)").matches) {
             // Desktop view
             photoSection.forEach(section => {
                 section.style.marginTop = "19%";
@@ -55,8 +55,21 @@ function toggleOverflow() {
             postSections.forEach(section => {
                 section.style.marginTop = "-6%";
             });
+        } else if (window.matchMedia("(min-width: 600px) and (max-width: 768px)").matches) {
+            //Small Mobile View
+            photoSection.forEach(section => {
+                section.style.marginTop = "45%";
+            });
+
+            videoSection.forEach(section => {
+                section.style.marginTop = "45%";
+            });
+
+            postSections.forEach(section => {
+                section.style.marginTop = "45%";
+            });
         } else {
-            // Mobile view
+            // Extra Small Mobile view
             photoSection.forEach(section => {
                 section.style.marginTop = "110%";
             });

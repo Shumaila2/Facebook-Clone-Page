@@ -1,5 +1,5 @@
-/* Small devices (portrait tablets and large phones, 600px to 768px) */
-@media only screen and (min-width: 600px) and (max-width: 768px) {
+/* Medium devices (landscape tablets, 768px to 992px) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
   body {
     display: block;
     margin-top: 8px;
@@ -42,7 +42,7 @@
     position: absolute;
     left: 64%;
     transform: translate(-50%);
-    width: 40px;
+    width: 40%;
   }
   #gray2 {
     left: 74%;
@@ -86,7 +86,7 @@
   /*Banner*/
   .banner {
     background-image: url(mobile-banner.jpg);
-    width: 600px;
+    width: 768px;
     height: 200px;
     left: 0%;
     border-radius: 0;
@@ -736,4 +736,4 @@
   }
 }
 
-/*# sourceMappingURL=small_devices.css.map */
+/*# sourceMappingURL=medium_devices.css.map */
