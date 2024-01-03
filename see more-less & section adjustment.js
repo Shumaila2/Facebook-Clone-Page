@@ -55,8 +55,21 @@ function toggleOverflow() {
             postSections.forEach(section => {
                 section.style.marginTop = "-6%";
             });
-        } else if (window.matchMedia("(min-width: 600px) and (max-width: 768px)").matches) {
-            //Small Mobile View
+        } else if (window.matchMedia("(min-width: 992px) and (max-width: 1200px)").matches) {
+            //Large Mobile View
+            photoSection.forEach(section => {
+                section.style.marginTop = "23%";
+            });
+
+            videoSection.forEach(section => {
+                section.style.marginTop = "23%";
+            });
+
+            postSections.forEach(section => {
+                section.style.marginTop = "-6%";
+            });
+        } else if (window.matchMedia("(min-width: 768px) and (max-width: 992px)").matches) {
+            //Medium Mobile View
             photoSection.forEach(section => {
                 section.style.marginTop = "45%";
             });
@@ -67,6 +80,19 @@ function toggleOverflow() {
 
             postSections.forEach(section => {
                 section.style.marginTop = "45%";
+            });
+        } else if (window.matchMedia("(min-width: 600px) and (max-width: 768px)").matches) {
+            //Small Mobile View
+            photoSection.forEach(section => {
+                section.style.marginTop = "33%";
+            });
+
+            videoSection.forEach(section => {
+                section.style.marginTop = "33%";
+            });
+
+            postSections.forEach(section => {
+                section.style.marginTop = "33%";
             });
         } else {
             // Extra Small Mobile view

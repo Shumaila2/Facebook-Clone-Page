@@ -69,6 +69,18 @@ input[type=search]:focus {
     transform: translate(-50%);
 }
 
+#watch{
+    left: 40%;
+}
+
+#marketplace{
+    left: 50%;
+}
+
+#frame{
+    left: 60%;
+}
+
 /*Center Icons Hover*/
 .img1:hover{
     width: 30px;
